@@ -1,0 +1,27 @@
+<!-- pages/templates/pages/home.html -->
+
+{% extends "base.html" %}
+
+{% block page_content %}
+{% for page in pages %}
+<div class="row">
+    <div class="col-md-8">
+        {% if page.image %}
+            <img class="card-img-top" src="{{ page.image.url }}">
+        {% endif %}
+    </div>
+    <div class="col-md-4">
+        <h1>{{ page.name }}</h1>
+
+        <h3>About Me:</h3>
+        <p>{{ page.about }}</p>
+
+        <h3>Github:</h3>
+        <a href="{{ page.github }}"><img src="/media/project_images/github-mark.png"/></a>
+
+        <h3>Website:</h3>
+        <a href="{{ page.website }}"><img src="/media/project_images/the-spirits.jpg" width="100%"/></a>
+    </div>
+</div>
+{% endfor %}
+{% endblock page_content %}

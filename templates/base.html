@@ -1,0 +1,32 @@
+<!-- templates/base.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}My Personal Portfolio{% endblock title %}</title>
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+    <nav class="navbar navbar-expand-lg navbar-light">
+    {% block content %}
+    <a class="navbar-brand" href="/">Nathan Moritz</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="/">Home</a>
+            <a class="nav-item nav-link" href="/projects">Projects</a>
+        </div>
+    </div>
+    {% endblock content %}
+    </nav>
+  </body>
+</head>
+<body class="container">
+{% block page_content %}{% endblock page_content %}
+</body>
+</html>
